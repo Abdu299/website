@@ -64,30 +64,31 @@ const SubmitProperty = () => {
     setImagePreviews(imagePreviews.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+  const form = e.currentTarget;
+  const formData = new FormData(form);
 
-    const data = {
-      name: formData.get("name"),
-      phone: formData.get("phone"),
-      address: formData.get("address"),
-      notes: formData.get("notes")
-    };
-
-    await fetch("/api/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    });
-
-    setIsSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const data = {
+    name: formData.get("name"),
+    phone: formData.get("phone"),
+    address: formData.get("address"),
+    rooms: formData.get("rooms"),
+    type: formData.get("type"),
+    notes: formData.get("notes")
   };
+
+  await fetch("/api/send", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  setIsSubmitted(true);
+};
 
   if (isSubmitted) {
     return (
