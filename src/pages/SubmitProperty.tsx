@@ -47,6 +47,10 @@ const SubmitProperty = () => {
   const [selectedRoomTypes, setSelectedRoomTypes] = useState<string[]>([]);
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
 
+  const [selectedType, setSelectedType] = useState("");
+  const [selectedCondition, setSelectedCondition] = useState("");
+
+
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
     if (images.length + files.length > 10) {
@@ -89,7 +93,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
   setIsSubmitted(true);
 };
-
+  
   if (isSubmitted) {
     return (
       <div className="min-h-screen flex items-center justify-center pt-16 px-4">
@@ -129,15 +133,15 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="space-y-2">
                 <Label htmlFor="name">الاسم الكامل *</Label>
-                <Input id="name" placeholder="أدخل اسمك الكامل" required />
+                <Input name="name" placeholder="أدخل اسمك الكامل" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="phone">رقم الهاتف *</Label>
-                <Input id="phone" type="tel" placeholder="+966 5XX XXX XXXX" required dir="ltr" className="text-left" />
+                <Input name="phone" type="tel" placeholder="+966 5XX XXX XXXX" required dir="ltr" className="text-left" />
               </div>
               <div className="space-y-2 md:col-span-2">
                 <Label htmlFor="email">البريد الإلكتروني *</Label>
-                <Input id="email" type="email" placeholder="example@email.com" required dir="ltr" className="text-left" />
+                <Input name="email" type="email" placeholder="example@email.com" required dir="ltr" className="text-left" />
               </div>
             </div>
           </Card>
@@ -153,20 +157,21 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="space-y-2 md:col-span-2">
                 <Label htmlFor="address">عنوان العقار *</Label>
-                <Input id="address" placeholder="مثال: شارع الملك فهد، حي العليا" required />
+                <Input name="address" placeholder="" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="city">المدينة *</Label>
-                <Input id="city" placeholder="مثال: الرياض" required />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="country">الدولة *</Label>
-                <Input id="country" placeholder="مثال: المملكة العربية السعودية" required />
+                <Input name="city" placeholder="" required />
               </div>
               <div className="space-y-2">
                 <Label>نوع العقار *</Label>
-                <Select required>
-                  <SelectTrigger><SelectValue placeholder="اختر نوع العقار" /></SelectTrigger>
+
+                <input type="hidden" name="type" value={selectedType} />
+
+                <Select onValueChange={setSelectedType} required>
+                  <SelectTrigger>
+                    <SelectValue placeholder="اختر نوع العقار" />
+                  </SelectTrigger>
                   <SelectContent>
                     {propertyTypes.map((t) => (
                       <SelectItem key={t.value} value={t.value}>{t.label}</SelectItem>
@@ -176,15 +181,18 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="area">المساحة (م²) *</Label>
-                <Input id="area" type="number" placeholder="مثال: 250" required />
+                <Input name="area" type="number" placeholder="مثال: 250" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="rooms">عدد الغرف *</Label>
-                <Input id="rooms" type="number" placeholder="مثال: 5" required />
+                <Input name="rooms" type="number" placeholder="مثال: 5" required />
               </div>
               <div className="space-y-2">
                 <Label>حالة العقار *</Label>
-                <Select required>
+                  <input type="hidden" name="condition" value={selectedCondition} />
+
+                  <Select onValueChange={setSelectedCondition} required>
+                    
                   <SelectTrigger><SelectValue placeholder="اختر حالة العقار" /></SelectTrigger>
                   <SelectContent>
                     {conditions.map((c) => (
@@ -218,11 +226,11 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
               <div className="space-y-2">
                 <Label htmlFor="year">سنة البناء (اختياري)</Label>
-                <Input id="year" type="number" placeholder="مثال: 2020" />
+                <Input name="year" type="number" placeholder="مثال: 2020" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="price">السعر المتوقع (اختياري)</Label>
-                <Input id="price" type="number" placeholder="مثال: 500000" />
+                <Input name="price" type="number" placeholder="مثال: 500000" />
               </div>
             </div>
           </Card>
@@ -238,7 +246,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             <div className="space-y-5">
               <div className="space-y-2">
                 <Label htmlFor="description">وصف العقار</Label>
-                <Textarea id="description" placeholder="اكتب وصفاً تفصيلياً للعقار..." rows={4} />
+                <Textarea name="description" placeholder="اكتب وصفاً تفصيلياً للعقار..." rows={4} />
               </div>
 
               <div className="space-y-3">
@@ -315,7 +323,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               </div>
               <h2 className="text-xl font-bold text-foreground">ملاحظات</h2>
             </div>
-            <Textarea id="notes" placeholder="أضف أي ملاحظات أو رسالة إضافية..." rows={3} />
+            <Textarea name="notes" placeholder="أضف أي ملاحظات أو رسالة إضافية..." rows={3} />
           </Card>
 
           {/* Submit */}
