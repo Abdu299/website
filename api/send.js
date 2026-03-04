@@ -14,14 +14,28 @@ export default async function handler(req, res) {
     const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
     const message = `
-New property submission
+🏠 New property submission
 
-Name: ${body.name}
-Phone: ${body.phone}
-Address: ${body.address}
-Rooms: ${body.rooms}
-Type: ${body.type}
-Notes: ${body.notes}
+👤 Name: ${body.name}
+📞 Phone: ${body.phone}
+📧 Email: ${body.email}
+
+📍 City: ${body.city}
+📍 Address: ${body.address}
+
+🏢 Property type: ${body.type}
+📐 Area: ${body.area} m²
+🛏 Rooms: ${body.rooms}
+🏗 Condition: ${body.condition}
+
+📅 Year built: ${body.year}
+💰 Expected price: ${body.price}
+
+📝 Description:
+${body.description}
+
+📌 Notes:
+${body.notes}
 `;
 
     await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {

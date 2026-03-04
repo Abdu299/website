@@ -75,13 +75,20 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   const formData = new FormData(form);
 
   const data = {
-    name: formData.get("name"),
-    phone: formData.get("phone"),
-    address: formData.get("address"),
-    rooms: formData.get("rooms"),
-    type: formData.get("type"),
-    notes: formData.get("notes")
-  };
+  name: formData.get("name"),
+  phone: formData.get("phone"),
+  email: formData.get("email"),
+  city: formData.get("city"),
+  address: formData.get("address"),
+  type: formData.get("type"),
+  condition: formData.get("condition"),
+  area: formData.get("area"),
+  rooms: formData.get("rooms"),
+  year: formData.get("year"),
+  price: formData.get("price"),
+  description: formData.get("description"),
+  notes: formData.get("notes")
+};
 
   await fetch("/api/send", {
     method: "POST",
@@ -192,7 +199,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   <input type="hidden" name="condition" value={selectedCondition} />
 
                   <Select onValueChange={setSelectedCondition} required>
-                    
+
                   <SelectTrigger><SelectValue placeholder="اختر حالة العقار" /></SelectTrigger>
                   <SelectContent>
                     {conditions.map((c) => (
