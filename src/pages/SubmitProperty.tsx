@@ -72,22 +72,26 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
   const form = e.currentTarget;
-  const formData = new FormData(form);
+  //const formData = new FormData(form);
 
   const data = {
-  name: formData.get("name"),
-  phone: formData.get("phone"),
-  email: formData.get("email"),
-  city: formData.get("city"),
-  address: formData.get("address"),
-  type: formData.get("type"),
-  condition: formData.get("condition"),
-  area: formData.get("area"),
-  rooms: formData.get("rooms"),
-  year: formData.get("year"),
-  price: formData.get("price"),
-  description: formData.get("description"),
-  notes: formData.get("notes")
+  name: (form.elements.namedItem("name") as HTMLInputElement)?.value,
+  phone: (form.elements.namedItem("phone") as HTMLInputElement)?.value,
+  email: (form.elements.namedItem("email") as HTMLInputElement)?.value,
+  city: (form.elements.namedItem("city") as HTMLInputElement)?.value,
+  address: (form.elements.namedItem("address") as HTMLInputElement)?.value,
+
+  type: selectedType,
+  condition: selectedCondition,
+
+  area: (form.elements.namedItem("area") as HTMLInputElement)?.value,
+  rooms: (form.elements.namedItem("rooms") as HTMLInputElement)?.value,
+
+  year: (form.elements.namedItem("year") as HTMLInputElement)?.value,
+  price: (form.elements.namedItem("price") as HTMLInputElement)?.value,
+
+  description: (form.elements.namedItem("description") as HTMLTextAreaElement)?.value,
+  notes: (form.elements.namedItem("notes") as HTMLTextAreaElement)?.value
 };
 
   await fetch("/api/send", {
