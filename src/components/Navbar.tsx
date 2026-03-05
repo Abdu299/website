@@ -29,7 +29,7 @@ const Navbar = () => {
               طلب شراء عقار
             </Link>
             <Link
-              to="/property"
+              to="/properties"
               className={`text-sm font-medium transition-colors hover:text-primary ${
                 location.pathname === "/property"
                   ? "text-primary"
@@ -62,7 +62,7 @@ const Navbar = () => {
             أبحث عن عقار
           </Link>
           <Link
-            to="/property"
+            to="/properties"
             className={`text-sm font-medium transition-colors hover:text-primary ${
               location.pathname === "/property"
                 ? "text-primary"
