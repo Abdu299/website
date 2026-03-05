@@ -28,10 +28,12 @@ const Navbar = () => {
             <Link to="/buy" className={`text-sm font-medium transition-colors hover:text-primary ${location.pathname === '/buy' ? 'text-primary' : 'text-muted-foreground'}`}>
               طلب شراء عقار
             </Link>
-            <Link 
-              to="/properties"
+            <Link
+              to="/property"
               className={`text-sm font-medium transition-colors hover:text-primary ${
-                location.pathname === '/properties' ? 'text-primary' : 'text-muted-foreground'
+                location.pathname === "/property"
+                  ? "text-primary"
+                  : "text-muted-foreground"
               }`}
             >
               العقارات
@@ -59,10 +61,12 @@ const Navbar = () => {
           >
             أبحث عن عقار
           </Link>
-          <Link 
-            to="/properties"
+          <Link
+            to="/property"
             className={`text-sm font-medium transition-colors hover:text-primary ${
-              location.pathname === '/properties' ? 'text-primary' : 'text-muted-foreground'
+              location.pathname === "/property"
+                ? "text-primary"
+                : "text-muted-foreground"
             }`}
           >
             العقارات
