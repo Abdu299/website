@@ -25,7 +25,7 @@ const App = () => (
           <Route path="/submit" element={<SubmitProperty />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/buy" element={<BuyProperty />} />
-          <Route path="/property/:id" element={<PropertyDetail />} />
+          <Route path="/property" element={<PropertyDetail />} />
         </Routes>
         <Footer />
       </BrowserRouter>
