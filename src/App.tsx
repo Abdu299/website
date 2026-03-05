@@ -9,7 +9,8 @@ import Index from "./pages/Index";
 import SubmitProperty from "./pages/SubmitProperty";
 import NotFound from "./pages/NotFound";
 import BuyProperty from "./pages/BuyProperty";
-import PropertyDetail from "./pages/PropertyDetail";
+
+import PropertyDetail from "./pages/PropertyPage";
 
 const queryClient = new QueryClient();
 
