@@ -79,6 +79,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   phone: (form.elements.namedItem("phone") as HTMLInputElement)?.value,
   email: (form.elements.namedItem("email") as HTMLInputElement)?.value,
   city: (form.elements.namedItem("city") as HTMLInputElement)?.value,
+  country: (form.elements.namedItem("country") as HTMLInputElement)?.value,
   address: (form.elements.namedItem("address") as HTMLInputElement)?.value,
 
   type: selectedType,
@@ -173,6 +174,10 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               <div className="space-y-2">
                 <Label htmlFor="city">المدينة *</Label>
                 <Input name="city" placeholder="" required />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="country">الدولة *</Label>
+                <Input name="country" placeholder="مثال: المملكة العربية السعودية" required />
               </div>
               <div className="space-y-2">
                 <Label>نوع العقار *</Label>

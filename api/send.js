@@ -20,8 +20,10 @@ export default async function handler(req, res) {
 📞 Phone: ${body.phone}
 📧 Email: ${body.email}
 
+
 📍 City: ${body.city}
 📍 Address: ${body.address}
+📍 Country: ${body.country}
 
 🏢 Property type: ${body.type}
 📐 Area: ${body.area} m²
