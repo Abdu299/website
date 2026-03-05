@@ -28,9 +28,15 @@ const Navbar = () => {
             <Link to="/buy" className={`text-sm font-medium transition-colors hover:text-primary ${location.pathname === '/buy' ? 'text-primary' : 'text-muted-foreground'}`}>
               طلب شراء عقار
             </Link>
-            <Link to="/property" className={`text-sm font-medium transition-colors hover:text-primary ${location.pathname === '/buy' ? 'text-primary' : 'text-muted-foreground'}`}>
-              أبحث عن عقار
+            <Link 
+              to="/properties"
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                location.pathname === '/properties' ? 'text-primary' : 'text-muted-foreground'
+              }`}
+            >
+              العقارات
             </Link>
+
           <Button asChild size="sm" className="gradient-hero text-primary-foreground border-0 hover:opacity-90">
             <Link to="/submit">أرسل معلومات عقارك</Link>
           </Button>
@@ -53,9 +59,14 @@ const Navbar = () => {
           >
             أبحث عن عقار
           </Link>
-          <Link to="/property" className={`text-sm font-medium transition-colors hover:text-primary ${location.pathname === '/buy' ? 'text-primary' : 'text-muted-foreground'}`}>
-              أبحث عن عقار
-            </Link>
+          <Link 
+            to="/properties"
+            className={`text-sm font-medium transition-colors hover:text-primary ${
+              location.pathname === '/properties' ? 'text-primary' : 'text-muted-foreground'
+            }`}
+          >
+            العقارات
+          </Link>
             
           <Link to="/submit" onClick={() => setIsOpen(false)} className="block text-sm font-medium text-muted-foreground hover:text-primary">أرسل عقارك</Link>
           <Button asChild size="sm" className="w-full gradient-hero text-primary-foreground border-0">

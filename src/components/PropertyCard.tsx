@@ -35,7 +35,7 @@ const PropertyCard = ({ property, index }: PropertyCardProps) => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1 text-primary font-bold">
             <Banknote className="h-4 w-4" />
-            <span>{property.price.toLocaleString("ar-MA")} د.م</span>
+            <span>{property.price.toLocaleString()} د.م</span>
           </div>
           {property.rooms > 0 && (
             <div className="flex items-center gap-1 text-sm text-muted-foreground">
