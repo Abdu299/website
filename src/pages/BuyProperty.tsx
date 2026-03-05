@@ -24,10 +24,17 @@ const BuyProperty = () => {
       budget: (form.elements.namedItem("budget") as HTMLInputElement)?.value,
       notes: (form.elements.namedItem("notes") as HTMLInputElement)?.value,
       country: (form.elements.namedItem("country") as HTMLInputElement)?.value,
-      requestType: "seller"
+      requestType: "buyer"
     };
 
     console.log(data);
+    await fetch("/api/send", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+        });
 
     toast({
       title: "تم إرسال الطلب",
