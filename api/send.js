@@ -29,6 +29,7 @@ message = `
 📍  الدوله:   ${body.country}
 
 💰 الميزانية: ${body.budget}
+النوع:  ${body.type}
 
 📝 ملاحظات:
 ${body.notes}
