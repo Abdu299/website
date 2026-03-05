@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+
 import PropertyCard from "@/components/PropertyCard";
 import { properties } from "@/data/properties";
 import { Building2 } from "lucide-react";
@@ -6,7 +6,7 @@ import { Building2 } from "lucide-react";
 const propertyPage = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      
 
       {/* Hero */}
       <section className="bg-gradient-to-b from-secondary to-background px-4 py-16 text-center">

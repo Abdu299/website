@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { properties } from "@/data/properties";
-import Navbar from "@/components/Navbar";
+
 import {
   ArrowRight,
   MapPin,
@@ -23,7 +23,7 @@ const PropertyDetail = () => {
   if (!property) {
     return (
       <div className="min-h-screen bg-background">
-        <Navbar />
+       
         <div className="container mx-auto px-4 py-20 text-center">
           <h1 className="text-2xl font-bold text-foreground">العقار غير موجود</h1>
           <Link to="/" className="mt-4 inline-block text-primary hover:underline">
@@ -50,7 +50,7 @@ const PropertyDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      
 
       <div className="container mx-auto px-4 py-8">
         {/* Back link */}
