@@ -14,16 +14,16 @@ const BuyProperty = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
+      const form = e.currentTarget;
 
     const data = {
-      name: formData.get("name"),
-      phone: formData.get("phone"),
-      email: formData.get("email"),
-      city: formData.get("city"),
-      budget: formData.get("budget"),
-      notes: formData.get("notes"),
-      country: formData.get("country"),
+      name: (form.elements.namedItem("name") as HTMLInputElement)?.value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement)?.value,
+      email: (form.elements.namedItem("email") as HTMLInputElement)?.value,
+      city: (form.elements.namedItem("city") as HTMLInputElement)?.value,
+      budget: (form.elements.namedItem("budget") as HTMLInputElement)?.value,
+      notes: (form.elements.namedItem("notes") as HTMLInputElement)?.value,
+      country: (form.elements.namedItem("country") as HTMLInputElement)?.value,
       requestType: "seller"
     };
 
