@@ -24,7 +24,7 @@ export const properties: Property[] = [
   {
     id: "1",
     title: "شقة فاخرة بإطلالة بحرية",
-    city: "الدار البيضاء",
+    city: "demo",
     address: "شارع الكورنيش، عين الذئاب",
     price: 1850000,
     rooms: 3,
@@ -38,7 +38,7 @@ export const properties: Property[] = [
   {
     id: "2",
     title: "فيلا عصرية مع حديقة",
-    city: "الرباط",
+    city: "demo",
     address: "حي الرياض، سويسي",
     price: 4200000,
     rooms: 5,
@@ -52,7 +52,7 @@ export const properties: Property[] = [
   {
     id: "3",
     title: "أرض للبناء بإطلالة جبلية",
-    city: "مراكش",
+    city: "demo",
     address: "طريق أوريكا، كلم 15",
     price: 950000,
     rooms: 0,
@@ -66,7 +66,7 @@ export const properties: Property[] = [
   {
     id: "4",
     title: "شقة واسعة في وسط المدينة",
-    city: "فاس",
+    city: "demo",
     address: "شارع محمد الخامس، فيل نوفيل",
     price: 780000,
     rooms: 4,
@@ -80,7 +80,7 @@ export const properties: Property[] = [
   {
     id: "5",
     title: "بنتهاوس فاخر مع تراس",
-    city: "طنجة",
+    city: "demo",
     address: "مالاباطا، الكورنيش",
     price: 3500000,
     rooms: 4,
@@ -94,7 +94,7 @@ export const properties: Property[] = [
   {
     id: "6",
     title: "رياض تقليدي مرمم",
-    city: "مراكش",
+    city: "demo",
     address: "المدينة القديمة، باب دكالة",
     price: 2800000,
     rooms: 6,
