@@ -26,6 +26,7 @@ message = `
 📧 البريد: ${body.email}
 
 📍 المنطقة المطلوبة: ${body.city}
+📍  الدوله:   ${body.country}
 
 💰 الميزانية: ${body.budget}
 
@@ -44,6 +45,7 @@ message = `
 
 📍 المدينة: ${body.city}
 📍 العنوان: ${body.address}
+📍  الدوله:   ${body.country}
 
 🏢 نوع العقار: ${body.type}
 🛏 عدد الغرف: ${body.rooms}

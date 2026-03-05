@@ -23,6 +23,7 @@ const BuyProperty = () => {
       city: formData.get("city"),
       budget: formData.get("budget"),
       notes: formData.get("notes"),
+      country: formData.get("country"),
       requestType: "seller"
     };
 
@@ -82,10 +83,18 @@ const BuyProperty = () => {
           </div>
 
           <div>
+            <Label>الدولة المطلوبة</Label>
+            <div className="flex gap-2">
+              <MapPin />
+              <Input name="country" placeholder="" required />
+            </div>
+          </div>
+
+          <div>
             <Label>المدينة أو المنطقة المطلوبة</Label>
             <div className="flex gap-2">
               <MapPin />
-              <Input name="city" placeholder="مثلاً دمشق، عمان..." required />
+              <Input name="city" placeholder="" required />
             </div>
           </div>
 
