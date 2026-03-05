@@ -177,7 +177,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="country">الدولة *</Label>
-                <Input name="country" placeholder="مثال: المملكة العربية السعودية" required />
+                <Input name="country" placeholder="" required />
               </div>
               <div className="space-y-2">
                 <Label>نوع العقار *</Label>
