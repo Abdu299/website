@@ -10,7 +10,8 @@ import SubmitProperty from "./pages/SubmitProperty";
 import NotFound from "./pages/NotFound";
 import BuyProperty from "./pages/BuyProperty";
 
-import PropertyDetail from "./pages/PropertyPage";
+import PropertyDetail from "./pages/PropertyDetail";
+import PropertyPage from "./pages/propertyPage";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +27,8 @@ const App = () => (
           <Route path="/submit" element={<SubmitProperty />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/buy" element={<BuyProperty />} />
-          <Route path="/property" element={<PropertyDetail />} />
+          <Route path="/properties" element={<PropertyPage />} />
+          <Route path="/property/:id" element={<PropertyDetail />} />
         </Routes>
         <Footer />
       </BrowserRouter>

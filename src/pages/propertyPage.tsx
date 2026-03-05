@@ -3,7 +3,7 @@ import PropertyCard from "@/components/PropertyCard";
 import { properties } from "@/data/properties";
 import { Building2 } from "lucide-react";
 
-const PropertyPage = () => {
+const propertyPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -36,4 +36,4 @@ const PropertyPage = () => {
   );
 };
 
-export default PropertyPage;
+export default propertyPage;
