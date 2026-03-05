@@ -25,6 +25,9 @@ const Navbar = () => {
           <Link to="/submit" className={`text-sm font-medium transition-colors hover:text-primary ${location.pathname === '/submit' ? 'text-primary' : 'text-muted-foreground'}`}>
             أرسل عقارك
           </Link>
+            <Link to="/buy" className={`text-sm font-medium transition-colors hover:text-primary ${location.pathname === '/buy' ? 'text-primary' : 'text-muted-foreground'}`}>
+              أبحث عن عقار
+            </Link>
           <Button asChild size="sm" className="gradient-hero text-primary-foreground border-0 hover:opacity-90">
             <Link to="/submit">أرسل معلومات عقارك</Link>
           </Button>
@@ -40,6 +43,13 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-card border-b border-border px-4 py-4 space-y-3 animate-fade-in">
           <Link to="/" onClick={() => setIsOpen(false)} className="block text-sm font-medium text-muted-foreground hover:text-primary">الرئيسية</Link>
+          <Link 
+              to="/buy" 
+              onClick={() => setIsOpen(false)} 
+              className="block text-sm font-medium text-muted-foreground hover:text-primary"
+            >
+              أبحث عن عقار
+            </Link>
           <Link to="/submit" onClick={() => setIsOpen(false)} className="block text-sm font-medium text-muted-foreground hover:text-primary">أرسل عقارك</Link>
           <Button asChild size="sm" className="w-full gradient-hero text-primary-foreground border-0">
             <Link to="/submit" onClick={() => setIsOpen(false)}>أرسل معلومات عقارك</Link>

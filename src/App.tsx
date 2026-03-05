@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import Index from "./pages/Index";
 import SubmitProperty from "./pages/SubmitProperty";
 import NotFound from "./pages/NotFound";
+import BuyProperty from "./pages/BuyProperty";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/submit" element={<SubmitProperty />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/buy" element={<BuyProperty />} />
         </Routes>
         <Footer />
       </BrowserRouter>

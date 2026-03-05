@@ -12,33 +12,50 @@ export default async function handler(req, res) {
 
     const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
     const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+    const isBuyer = body.requestType === "buyer";
 
-    const message = `
-🏠 New property submission
+    let message;
 
-👤 Name: ${body.name}
-📞 Phone: ${body.phone}
-📧 Email: ${body.email}
+if (isBuyer) {
 
+message = `
+🟢 طلب شراء عقار جديد
 
-📍 City: ${body.city}
-📍 Address: ${body.address}
-📍 Country: ${body.country}
+👤 الاسم: ${body.name}
+📞 الهاتف: ${body.phone}
+📧 البريد: ${body.email}
 
-🏢 Property type: ${body.type}
-📐 Area: ${body.area} m²
-🛏 Rooms: ${body.rooms}
-🏗 Condition: ${body.condition}
+📍 المنطقة المطلوبة: ${body.city}
 
-📅 Year built: ${body.year}
-💰 Expected price: ${body.price}
+💰 الميزانية: ${body.budget}
 
-📝 Description:
-${body.description}
-
-📌 Notes:
+📝 ملاحظات:
 ${body.notes}
 `;
+
+} else {
+
+message = `
+🏠 عرض عقار للبيع
+
+👤 الاسم: ${body.name}
+📞 الهاتف: ${body.phone}
+📧 البريد: ${body.email}
+
+📍 المدينة: ${body.city}
+📍 العنوان: ${body.address}
+
+🏢 نوع العقار: ${body.type}
+🛏 عدد الغرف: ${body.rooms}
+🏗 الحالة: ${body.condition}
+
+💰 السعر المتوقع: ${body.price}
+
+📝 ملاحظات:
+${body.notes}
+`;
+
+}
 
     await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       method: "POST",

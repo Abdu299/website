@@ -75,6 +75,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   //const formData = new FormData(form);
 
   const data = {
+
   name: (form.elements.namedItem("name") as HTMLInputElement)?.value,
   phone: (form.elements.namedItem("phone") as HTMLInputElement)?.value,
   email: (form.elements.namedItem("email") as HTMLInputElement)?.value,
@@ -92,7 +93,9 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   price: (form.elements.namedItem("price") as HTMLInputElement)?.value,
 
   description: (form.elements.namedItem("description") as HTMLTextAreaElement)?.value,
-  notes: (form.elements.namedItem("notes") as HTMLTextAreaElement)?.value
+  notes: (form.elements.namedItem("notes") as HTMLTextAreaElement)?.value,
+  
+  requestType: "seller"
 };
 
   await fetch("/api/send", {
