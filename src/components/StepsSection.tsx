@@ -3,23 +3,23 @@ import { ClipboardList, Search, MessageSquare, CheckCircle } from "lucide-react"
 const steps = [
   {
     icon: ClipboardList,
-    title: "أدخل معلومات عقارك",
-    description: "قم بتعبئة النموذج بمعلومات العقار الذي ترغب في بيعه مع إرفاق الصور.",
+    title: "Enter your property details",
+    description: "Fill out the form with the details of the property you want to sell and attach photos.",
   },
   {
     icon: Search,
-    title: "نراجع ونبحث عن مشترين",
-    description: "فريقنا يراجع المعلومات ويبحث عن المشترين المناسبين لعقارك.",
+    title: "We review and search for buyers",
+    description: "Our team reviews the information and looks for suitable buyers for your property.",
   },
   {
     icon: MessageSquare,
-    title: "تتلقى عروض شراء",
-    description: "نتواصل معك بعروض شراء من مشترين مهتمين بعقارك.",
+    title: "Receive purchase offers",
+    description: "We contact you with purchase offers from buyers interested in your property.",
   },
   {
     icon: CheckCircle,
-    title: "اختر العرض المناسب",
-    description: "تختار العرض الأنسب لك وتتم عملية البيع بنجاح.",
+    title: "Choose the best offer",
+    description: "You select the most suitable offer and the sale process is completed successfully.",
   },
 ];
 
@@ -29,10 +29,10 @@ const StepsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            كيف تعمل خدمتنا؟
+            How does our service work?
           </h2>
           <p className="text-muted-foreground text-lg max-w-md mx-auto">
-            أربع خطوات بسيطة لبيع عقارك
+            Four simple steps to sell your property
           </p>
         </div>
 
@@ -51,8 +51,11 @@ const StepsSection = () => {
               <div className="w-16 h-16 mx-auto mb-5 rounded-2xl gradient-hero flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <step.icon className="w-8 h-8 text-primary-foreground" />
               </div>
+
               <h3 className="text-lg font-bold text-foreground mb-3">{step.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                {step.description}
+              </p>
             </div>
           ))}
         </div>

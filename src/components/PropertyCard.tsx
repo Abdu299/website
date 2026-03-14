@@ -24,23 +24,27 @@ const PropertyCard = ({ property, index }: PropertyCardProps) => {
           {property.type}
         </span>
       </div>
+
       <div className="p-4">
         <h3 className="mb-2 text-lg font-bold text-foreground line-clamp-1">
           {property.title}
         </h3>
+
         <div className="mb-3 flex items-center gap-1 text-sm text-muted-foreground">
           <MapPin className="h-4 w-4 shrink-0" />
           <span>{property.city}</span>
         </div>
+
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1 text-primary font-bold">
             <Banknote className="h-4 w-4" />
-            <span>{property.price.toLocaleString()} د.م</span>
+            <span>{property.price.toLocaleString()} MAD</span>
           </div>
+
           {property.rooms > 0 && (
             <div className="flex items-center gap-1 text-sm text-muted-foreground">
               <BedDouble className="h-4 w-4" />
-              <span>{property.rooms} غرف</span>
+              <span>{property.rooms} rooms</span>
             </div>
           )}
         </div>

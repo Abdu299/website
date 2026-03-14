@@ -9,10 +9,10 @@ const Footer = () => {
             <div className="w-9 h-9 rounded-lg bg-primary-foreground/20 flex items-center justify-center">
               <Building2 className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-lg font-bold">عقارك</span>
+            <span className="text-lg font-bold">Aqarak</span>
           </div>
           <p className="text-primary-foreground/70 text-sm">
-            © {new Date().getFullYear()} عقارك. جميع الحقوق محفوظة.
+            © {new Date().getFullYear()} Aqarak. All rights reserved.
           </p>
         </div>
       </div>
