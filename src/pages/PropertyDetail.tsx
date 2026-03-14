@@ -25,9 +25,9 @@ const PropertyDetail = () => {
       <div className="min-h-screen bg-background">
        
         <div className="container mx-auto px-4 py-20 text-center">
-          <h1 className="text-2xl font-bold text-foreground">العقار غير موجود</h1>
+          <h1 className="text-2xl font-bold text-foreground">Property not found</h1>
           <Link to="/" className="mt-4 inline-block text-primary hover:underline">
-            العودة للرئيسية
+            Back to home
           </Link>
         </div>
       </div>
@@ -35,17 +35,17 @@ const PropertyDetail = () => {
   }
 
   const details = [
-    { icon: Maximize2, label: "المساحة", value: `${property.area} م²` },
+    { icon: Maximize2, label: "Area", value: `${property.area} m²` },
     ...(property.rooms > 0
-      ? [{ icon: BedDouble, label: "الغرف", value: `${property.rooms}` }]
+      ? [{ icon: BedDouble, label: "Rooms", value: `${property.rooms}` }]
       : []),
     ...(property.bathrooms > 0
-      ? [{ icon: Bath, label: "الحمامات", value: `${property.bathrooms}` }]
+      ? [{ icon: Bath, label: "Bathrooms", value: `${property.bathrooms}` }]
       : []),
     ...(property.floor !== null
-      ? [{ icon: Building, label: "الطابق", value: `${property.floor}` }]
+      ? [{ icon: Building, label: "Floor", value: `${property.floor}` }]
       : []),
-    { icon: Home, label: "النوع", value: property.type },
+    { icon: Home, label: "Type", value: property.type },
   ];
 
   return (
@@ -59,7 +59,7 @@ const PropertyDetail = () => {
           className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
         >
           <ArrowRight className="h-4 w-4" />
-          العودة للعقارات
+          Back to properties
         </Link>
 
         <div className="grid gap-8 lg:grid-cols-3">
@@ -73,6 +73,7 @@ const PropertyDetail = () => {
                 className="aspect-video w-full object-cover"
               />
             </div>
+
             {/* Thumbnails */}
             <div className="mb-8 flex gap-3">
               {property.images.map((img, i) => (
@@ -98,10 +99,11 @@ const PropertyDetail = () => {
             <h1 className="mb-2 text-3xl font-bold text-foreground">
               {property.title}
             </h1>
+
             <div className="mb-6 flex items-center gap-2 text-muted-foreground">
               <MapPin className="h-5 w-5" />
               <span>
-                {property.address}، {property.city}
+                {property.address}, {property.city}
               </span>
             </div>
 
@@ -123,7 +125,7 @@ const PropertyDetail = () => {
 
             {/* Description */}
             <div className="rounded-lg border bg-card p-6">
-              <h2 className="mb-3 text-xl font-bold text-foreground">الوصف</h2>
+              <h2 className="mb-3 text-xl font-bold text-foreground">Description</h2>
               <p className="leading-7 text-muted-foreground">
                 {property.description}
               </p>
@@ -134,26 +136,28 @@ const PropertyDetail = () => {
           <div className="space-y-6">
             {/* Price card */}
             <div className="rounded-lg border bg-card p-6 text-center">
-              <p className="mb-1 text-sm text-muted-foreground">السعر</p>
+              <p className="mb-1 text-sm text-muted-foreground">Price</p>
               <div className="flex items-center justify-center gap-2 text-3xl font-bold text-primary">
                 <Banknote className="h-7 w-7" />
-                {property.price.toLocaleString("ar-MA")} د.م
+                {property.price.toLocaleString("ar-MA")} MAD
               </div>
             </div>
 
             {/* Contact card */}
             <div className="rounded-lg border bg-card p-6">
               <h3 className="mb-4 text-lg font-bold text-foreground">
-                تواصل معنا
+                Contact us
               </h3>
+
               <div className="space-y-4">
                 <a
                   href="tel:+212600000000"
                   className="flex items-center gap-3 rounded-lg bg-primary px-4 py-3 text-primary-foreground transition-colors hover:bg-primary/90"
                 >
                   <Phone className="h-5 w-5" />
-                  <span className="font-medium">212 600 000 000+</span>
+                  <span className="font-medium">+212 600 000 000</span>
                 </a>
+
                 <a
                   href="mailto:info@aqaratna.ma"
                   className="flex items-center gap-3 rounded-lg border px-4 py-3 text-foreground transition-colors hover:bg-secondary"
@@ -163,6 +167,7 @@ const PropertyDetail = () => {
                 </a>
               </div>
             </div>
+
           </div>
         </div>
       </div>
